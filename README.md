@@ -1,4 +1,4 @@
-![ICI LOGO](img/ici_logo.png)
+![ICI LOGO](imgs/ici_logo.png)
 
 ## Fecha: 03/06/2022
 
