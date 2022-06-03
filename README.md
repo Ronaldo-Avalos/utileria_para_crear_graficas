@@ -104,3 +104,4 @@ func barGraph(w http.ResponseWriter, _ *http.Request) {
  ![](imgs/cap_grafica_pastel.gif)
  
    
+### Ahora trabajaramos con estas mismas opciones de graficas peero ahora con un archivo CSV 
