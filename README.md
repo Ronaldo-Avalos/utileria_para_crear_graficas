@@ -1,8 +1,11 @@
 ![ICI LOGO](imgs/ici_logo.png)
 
-## Fecha: 03/06/2022
+###Fecha: 03/06/2022
 
-## Documentacion del Proyecto de parcial de la materia Analisis y Visualización de datos 
+### Se desea crear una utilería para crear gráficas. Esta va a tener dos opciones:
+### 1.- Crearlas a partir de un archivo CSV existente
+### 2.- Crearlas a partir de valores generados de manera aleatoria.
+
 
 #### Comenzamos el proyecto con la creacion del archivo main en Go
 
