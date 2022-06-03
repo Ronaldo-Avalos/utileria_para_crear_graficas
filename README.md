@@ -12,7 +12,7 @@ func main() {
  ```
  #### Se añadieron las opciones de casos que se presentaran
  
-  ```
+  ```GO
   func main() {
   op1 := os.Args[1]
 	op2 := os.Args[2]
