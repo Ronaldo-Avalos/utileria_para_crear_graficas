@@ -42,3 +42,19 @@ func generateBarItemsrand() []opts.BarData {
 	return items
 }
  ```
+ ### Generamos la funcion para ordenar los datos de la grafica
+  ```GO
+  
+func barGraph(w http.ResponseWriter, _ *http.Request) {
+	bar := charts.NewBar()
+	bar.SetGlobalOptions(charts.WithTitleOpts(opts.Title{
+		Title:    "Grafica de barra ",
+		Subtitle: "Generada con números aleatorios",
+	}))
+	bar.SetXAxis([]string{"dato1", "dato2", "dato3", "dato4", "dato5", "dato6", "dato7"}).
+		AddSeries("Category A", generateBarItemsrand()).
+		AddSeries("Category B", generateBarItemsrand())
+	bar.Render(w)
+}
+ ```
+  
