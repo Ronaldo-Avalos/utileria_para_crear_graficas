@@ -1,3 +1,9 @@
+![ICI LOGO](img/ici_logo.png)
+
+## Fecha: 03/06/2022
+
+## Documentacion del Proyecto de parcial de la materia Analisis y Visualización de datos 
+
 #### Comenzamos el proyecto con la creacion del archivo main en Go
 
 ```GO
