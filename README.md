@@ -90,9 +90,17 @@ func barGraph(w http.ResponseWriter, _ *http.Request) {
  
 ![captura1](imgs/cap1.png)
 
-#### Una vez activado el servidor se generara una grafica con datos aleatorios.
+#### Una vez activado el servidor se genera una grafica con datos aleatorios.
 
 ![](imgs/gif_barraas.gif)
- 
+
+#### Este procedimiento tambien se aplica para la grafica de linea ```$go run graphgen --line --generate```
+
+![](imgs/cap_grafica de linea.gif)
+
+
+#### Grafica de pastel  ```$go run graphgen --pie --generate```
+
+ ![](imgs/ccap_grafica_pastel.gif)
  
    
