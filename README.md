@@ -86,10 +86,13 @@ func barGraph(w http.ResponseWriter, _ *http.Request) {
 		}
 		```
  
- #### Con eesto podemos ejecutar ```$go run graphgen --bar --generate```
+ #### Con esto podemos ejecutar ```$go run graphgen --bar --generate``` y se mostrara una grafica en el servidor local ``` http://localhost:8080/ ```
  
- cap1
- 
+![captura1](imgs/cap1.png)
+
+#### Una vez activado el servidor se generara una grafica con datos aleatorios.
+
+![](imgs/gif_barraas.gif)
  
  
    
