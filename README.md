@@ -3,8 +3,8 @@
 ###Fecha: 03/06/2022
 
 ### Se desea crear una utilería para crear gráficas. Esta va a tener dos opciones:
-### 1.- Crearlas a partir de un archivo CSV existente
-### 2.- Crearlas a partir de valores generados de manera aleatoria.
+### 1.- Crearlas a partir de valores generados de manera aleatoria.
+### 2.- Crearlas a partir de un archivo CSV existente.
 
 
 #### Comenzamos el proyecto con la creacion del archivo main en Go
