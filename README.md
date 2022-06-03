@@ -3,9 +3,7 @@
 ```GO
 package main
 
-import (
-	
-)
+import ()
 func main() {
 	
 }
@@ -33,3 +31,14 @@ func main() {
 	}
 }
    ```
+#### Generamos una funcion para crear los items randoms para la opcion de grafica de barras
+ ```GO
+  //Generea la grafica de barras con rand
+func generateBarItemsrand() []opts.BarData {
+	items := make([]opts.BarData, 0)
+	for i := 0; i < 7; i++ {
+		items = append(items, opts.BarData{Value: rand.Intn(300)})
+	}
+	return items
+}
+ ```
