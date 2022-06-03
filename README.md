@@ -96,11 +96,11 @@ func barGraph(w http.ResponseWriter, _ *http.Request) {
 
 #### Este procedimiento tambien se aplica para la grafica de linea ```$go run graphgen --line --generate```
 
-![](imgs/cap_grafica de linea.gif)
+![](imgs/cap_grafica_linea.gif)
 
 
 #### Grafica de pastel  ```$go run graphgen --pie --generate```
 
- ![](imgs/ccap_grafica_pastel.gif)
+ ![](imgs/cap_grafica_pastel.gif)
  
    
