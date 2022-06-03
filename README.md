@@ -57,4 +57,30 @@ func barGraph(w http.ResponseWriter, _ *http.Request) {
 	bar.Render(w)
 }
  ```
-  
+ #### Despues el opción correspondientes mandamos los datos al servidor local para ser mostrados en un html
+  ```GO
+ case "--bar":
+			http.HandleFunc("/", barGraph)
+			http.ListenAndServe(":8080", nil)
+   ```
+   
+   ### Pepetimos con la grafica de lineas y de pastel 
+    ```GO
+    case "--line":
+			http.HandleFunc("/", httpserver)
+			http.ListenAndServe(":8080", nil)
+		case "--pie":
+			http.HandleFunc("/", pieGraph)
+			log.Fatal(http.ListenAndServe(":8080", nil))
+		default:
+			log.Println("Opciones no encontradas...")
+		}
+		```
+ 
+ #### Con eesto podemos ejecutar ```$go run graphgen --bar --generate```
+ 
+ cap1
+ 
+ 
+ 
+   
