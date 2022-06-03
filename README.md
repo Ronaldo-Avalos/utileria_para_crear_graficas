@@ -1,2 +1,27 @@
-# utileria_para_crear_graficas
-Se desea crear una utilería para crear gráficas. Esta va a tener dos opciones: 1.- Crearlas a partir de un archivo CSV existente 2.- Crearlas a partir de valores generados de manera aleatoria.
+Para empezar, necesitamos leer el conjunto de datos(CSV) en nuestro programa. Vamos a crear un nuevo archivo de entrada main.go y luego crear una función principal.
+
+```GO
+package main
+
+import (
+	"encoding/csv"
+	"log"
+	"os"
+)
+func main() {
+	// CSV
+	file, err := os.Open("games.csv")
+	var gameNames []string
+	var sales []float64
+	if err != nil {
+		log.Fatal(err)
+	}
+	reader := csv.NewReader(file)
+	reader.LazyQuotes = true
+	records, err := reader.ReadAll()
+	if err != nil {
+		log.Fatal(err)
+	}
+}
+ ```
+Usamos el ```os``` que es un paquete de Golang para abrir el archivo cvs y el nombre del archivo como argumento sera guardando este conjunto de datos como archivo
