@@ -162,7 +162,28 @@ func barGraphcsv(w http.ResponseWriter, _ *http.Request) {
 	bar.Render(w)
 }
 ```
-#### Esta función manda los datos al servidor local y se genera la gráfica
+#### Esta función manda los datos al servidor local y se genera la gráfica ejecutando ```$go run graphgen --bar data.csv```
 
-![captura1](imgs/cap1.png)
+![](imgs/graficabarraacsv.gif)
+
+#### Para la grafica de linea es el mismo procedimiento y hacemos uso de las funcones ya creadas anteriormente
+```GO
+func lineGraphcsv(w http.ResponseWriter, _ *http.Request) {
+	line := charts.NewLine()
+	line.SetGlobalOptions(
+		charts.WithInitializationOpts(opts.Initialization{Theme: types.ThemeWesteros}),
+		charts.WithTitleOpts(opts.Title{
+			Title:    "Grafica de lineas",
+			Subtitle: "Generada con un archivo CSV",
+		}))
+	line.SetXAxis([]string{"Enero", "Febreo", "Marzo", "Abril", "Mayo", "Junio", "Julio"}).
+		AddSeries("Category A", generateLineItemscsv()).
+		AddSeries("Category B", generateLineItemscsv()).
+		SetSeriesOptions(charts.WithLineChartOpts(opts.LineChart{Smooth: true}))
+	line.Render(w)
+}
+```
+#### Ejecutamos para comprobar ```$go run graphgen --line data.csv```
+
+![](imgs/grafica_lineacsv.png)
 
