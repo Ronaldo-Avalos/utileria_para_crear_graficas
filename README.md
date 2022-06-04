@@ -52,7 +52,7 @@ func generateBarItemsrand() []opts.BarData {
 }
  ```
  ### Generamos la funcion para ordenar los datos de la grafica
-  ```GO
+ ```GO
   
 func barGraph(w http.ResponseWriter, _ *http.Request) {
 	bar := charts.NewBar()
@@ -67,14 +67,14 @@ func barGraph(w http.ResponseWriter, _ *http.Request) {
 }
  ```
  #### Despues el opción correspondientes mandamos los datos al servidor local para ser mostrados en un html
-  ```GO
+ ```GO
  case "--bar":
 			http.HandleFunc("/", barGraph)
 			http.ListenAndServe(":8080", nil)
    ```
    
    ### Pepetimos con la grafica de lineas y de pastel 
-    ```GO
+```GO
     case "--line":
 			http.HandleFunc("/", httpserver)
 			http.ListenAndServe(":8080", nil)
@@ -84,7 +84,7 @@ func barGraph(w http.ResponseWriter, _ *http.Request) {
 		default:
 			log.Println("Opciones no encontradas...")
 		}
-		```
+```
  
  #### Con esto podemos ejecutar ```$go run graphgen --bar --generate``` y se mostrara una grafica en el servidor local ``` http://localhost:8080/ ```
  
