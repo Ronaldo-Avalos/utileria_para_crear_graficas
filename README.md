@@ -105,3 +105,64 @@ func barGraph(w http.ResponseWriter, _ *http.Request) {
  
    
 ### Ahora trabajaramos con estas mismas opciones de graficas peero ahora con un archivo CSV 
+
+#### Para comenzar necesitamos leer el archivo CSV y convertirlo en una matriz para eso usamos la siguiente función
+```GO
+func ReadCSVFile() [][]string {
+	// CSV Reader
+	file, err := os.Open("./data.csv")
+	if err != nil {
+		fmt.Println(err)
+	}
+	reader := csv.NewReader(file)
+	reader.LazyQuotes = true
+	records, err := reader.ReadAll()
+	if err != nil {
+		log.Fatal(err)
+	}
+	return records
+}
+```
+#### Generamos la matriz con los datos del archivo con la siguiente función 
+```Go
+
+func generateBarFile() []opts.BarData {
+	items := make([]opts.BarData, 0)
+	sum := 0
+
+	for i := 0; i < len(ReadCSVFile()[0]); i++ {
+		sum = 0
+		for j := 1; j < len(ReadCSVFile()); j++ {
+			temp, _ := strconv.Atoi(ReadCSVFile()[j][i])
+			sum += temp
+		}
+		value := strconv.Itoa(sum)
+		items = append(items, opts.BarData{Value: value})
+	}
+	return items
+}
+```
+#### La siguiente funcion genera la grafica de barras con los datos optenidos del arvhivo
+```GO
+
+func barGraphcsv(w http.ResponseWriter, _ *http.Request) {
+
+	bar := charts.NewBar()
+	//opciones globales
+	bar.SetGlobalOptions(charts.WithTitleOpts(opts.Title{
+		Title:    "GRAFICA DE BARRAS",
+		Subtitle: "Grafica generada con archivo csv",
+	}))
+
+	//poner datos
+	bar.SetXAxis([]string{"Enero", "Febrero", "Marzo", "Abril", "Junio", "Julio"}).
+		AddSeries("Category A", generateBarFile()).
+		AddSeries("Category B", generateBarFile()).
+		SetSeriesOptions(charts.WithLineChartOpts(opts.LineChart{Smooth: true}))
+	bar.Render(w)
+}
+```
+#### Esta función manda los datos al servidor local y se genera la gráfica
+
+![captura1](imgs/cap1.png)
+
