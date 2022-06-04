@@ -40,7 +40,7 @@ func main() {
 	}
 }
    ```
-#### Generamos una funcion para crear los items randoms para la opcion de grafica de barras
+#### Generamos una funcion para crear los items randoms para la opcion de grafica de barras con la siguiente función
  ```GO
   //Generea la grafica de barras con rand
 func generateBarItemsrand() []opts.BarData {
@@ -73,7 +73,7 @@ func barGraph(w http.ResponseWriter, _ *http.Request) {
 			http.ListenAndServe(":8080", nil)
    ```
    
-   ### Pepetimos con la grafica de lineas y de pastel 
+   ### Repetimos con la grafica de lineas y de pastel 
 ```GO
     case "--line":
 			http.HandleFunc("/", httpserver)
