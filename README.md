@@ -189,3 +189,4 @@ func lineGraphcsv(w http.ResponseWriter, _ *http.Request) {
 
 ![](imgs/grafica_lineacsv.png)
 
+ ![](imgs/cap_grafica_pastel.gif)
