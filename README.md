@@ -166,6 +166,7 @@ func barGraphcsv(w http.ResponseWriter, _ *http.Request) {
 
 ![](imgs/graficabarraacsv.gif)
 
+![](imgs/grafica_barraacsv.png)
 #### Para la grafica de linea es el mismo procedimiento y hacemos uso de las funcones ya creadas anteriormente
 ```GO
 func lineGraphcsv(w http.ResponseWriter, _ *http.Request) {
